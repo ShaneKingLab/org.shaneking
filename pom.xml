@@ -1,0 +1,290 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.4.1</version>
+  </parent>
+
+  <groupId>org.shaneking</groupId>
+  <artifactId>org.shaneking</artifactId>
+  <version>0.241.1.Lab-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>org.shaneking</name>
+  <description>ShaneKing Maven Projects</description>
+  <url>https://github.com/ShaneKingLab/org.shaneking</url>
+  <inceptionYear>2011-2021</inceptionYear>
+
+  <organization>
+    <name>ShaneKingLab</name>
+    <url>https://github.com/ShaneKingLab</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>ShaneKing</id>
+      <name>ShaneKing</name>
+      <email>github@shaneking.org</email>
+      <url>https://github.com/ShaneKing</url>
+      <organization>ShaneKingOrg</organization>
+      <organizationUrl>https://github.com/ShaneKingOrg</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+8</timezone>
+      <properties>
+        <dept>No</dept>
+      </properties>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
+      <name>Azolla</name>
+      <email>github@azolla.org</email>
+      <url>https://github.com/Azolla</url>
+      <organization>AzollaOrg</organization>
+      <organizationUrl>https://github.com/AzollaOrg</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+8</timezone>
+      <properties>
+        <dept>No</dept>
+      </properties>
+    </contributor>
+    <contributor>
+      <name>Maogu</name>
+      <email>github@maogu.org</email>
+      <url>https://github.com/Maogu</url>
+      <organization>MaoguOrg</organization>
+      <organizationUrl>https://github.com/MaoguOrg</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+8</timezone>
+      <properties>
+        <dept>No</dept>
+      </properties>
+    </contributor>
+  </contributors>
+
+  <scm>
+    <connection>scm:git:git@github.com:ShaneKingLab/org.shaneking.git</connection>
+    <developerConnection>scm:git:git@github.com:ShaneKingLab/org.shaneking.git</developerConnection>
+    <url>https://github.com/ShaneKingLab/org.shaneking</url>
+  </scm>
+  <issueManagement>
+    <system>Github</system>
+    <url>https://github.com/ShaneKingLab/org.shaneking/issues</url>
+  </issueManagement>
+  <ciManagement>
+    <system>Travis-CI</system>
+    <url>https://travis-ci.org/ShaneKingLab/org.shaneking</url>
+  </ciManagement>
+
+  <properties>
+    <!-- dependencies : updated 2021.1.7 -->
+    <com.belerweb_pinyin4j_version>2.5.1</com.belerweb_pinyin4j_version>
+    <com.github.jsqlparser_jsqlparser_version>4.0</com.github.jsqlparser_jsqlparser_version>
+    <com.github.liaochong_myexcel_version>3.11.4</com.github.liaochong_myexcel_version>
+    <com.google.guava_guava_version>30.1-jre</com.google.guava_guava_version>
+    <com.google.zxing_version>3.4.1</com.google.zxing_version>
+    <commons-io_commons-io_version>2.8.0</commons-io_commons-io_version>
+    <commons-net_commons-net_version>3.7.2</commons-net_commons-net_version>
+    <io.springfox_version>3.0.0</io.springfox_version>
+    <io.swagger_version>2.1.2</io.swagger_version>
+    <!-- build plugins -->
+    <org.jacoco_jacoco-maven-plugin_version>0.8.6</org.jacoco_jacoco-maven-plugin_version>
+    <org.sonarsource.scanner.maven_sonar-maven-plugin_version>3.8.0.2131</org.sonarsource.scanner.maven_sonar-maven-plugin_version><!-- sonar:sonar -->
+    <sh.tak.appbundler_appbundle-maven-plugin_version>1.2.0</sh.tak.appbundler_appbundle-maven-plugin_version><!-- g2048 -->
+    <!-- profile plugins -->
+    <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+  </properties>
+
+  <!-- mvn -N versions:set -DgenerateBackupPoms=false -DnewVersion=0.241.1.Lab-SNAPSHOT -->
+  <modules>
+    <module>../org.shaneking.ling</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.belerweb</groupId>
+        <artifactId>pinyin4j</artifactId>
+        <version>${com.belerweb_pinyin4j_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.jsqlparser</groupId>
+        <artifactId>jsqlparser</artifactId>
+        <version>${com.github.jsqlparser_jsqlparser_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.liaochong</groupId>
+        <artifactId>myexcel</artifactId>
+        <version>${com.github.liaochong_myexcel_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${com.google.guava_guava_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.zxing</groupId>
+        <artifactId>core</artifactId>
+        <version>${com.google.zxing_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.zxing</groupId>
+        <artifactId>javase</artifactId>
+        <version>${com.google.zxing_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons-io_commons-io_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-net</groupId>
+        <artifactId>commons-net</artifactId>
+        <version>${commons-net_commons-net_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-boot-starter</artifactId>
+        <version>${io.springfox_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${io.swagger_version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <!-- mvn clean install -->
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!--compile-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <parameters>true</parameters>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+        <!--test-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+        </plugin>
+        <!--coverage:https://blog.csdn.net/tyut_aa/article/details/107664463/-->
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${org.jacoco_jacoco-maven-plugin_version}</version>
+          <executions>
+            <execution>
+              <id>default-prepare-agent</id><!--'build.pluginManagement.plugins.plugin[org.jacoco:jacoco-maven-plugin].executions.execution.id' must be unique but found duplicate execution with id default-->
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>default-report</id>
+              <phase>test</phase>
+              <goals>
+                <goal>report</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <!--mvn sonar:sonar -Dsonar.host.url=http://sonar.shaneking.org -Dsonar.login=org.shaneking.*的Token-->
+        <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>${org.sonarsource.scanner.maven_sonar-maven-plugin_version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <profiles>
+    <profile>
+      <!-- mvn clean deploy -P oss -Dgpg.passphrase=分享为shaneking在上海 -->
+      <!-- mvn clean deploy -DskipTests -P oss -Dgpg.passphrase=分享为shaneking在上海 -->
+      <id>oss</id>
+      <build>
+        <plugins>
+          <!-- GPG:-Dgpg.passphrase=分享为shaneking在上海 -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>${maven-gpg-plugin.version}</version>
+            <executions>
+              <execution>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- Javadoc -->
+          <!--
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          -->
+          <!-- Source -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+      <distributionManagement>
+        <repository>
+          <id>oss</id>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+        <!-- for travis-ci.org, need upload to oss
+        <snapshotRepository>
+          <id>nexus</id>
+          <url>https://nexus.shaneking.org/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        -->
+        <snapshotRepository>
+          <id>oss</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+  </profiles>
+
+</project>
